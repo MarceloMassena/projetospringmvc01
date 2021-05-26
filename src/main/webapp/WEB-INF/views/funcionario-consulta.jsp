@@ -58,7 +58,7 @@
 	<div class="nav-scroller bg-body shadow-sm">
 		<nav class="nav nav-underline">
 			<p class="mt-3 ml-4">
-				&nbsp;&nbsp;&nbsp;Sistema desenvolvido em Spring MVC com Spring JDBC, Bootstrap e JQuery
+				   Sistema desenvolvido em Spring MVC com Spring JDBC, Bootstrap e JQuery
 			</p>
 		</nav>
 	</div>
@@ -127,7 +127,7 @@
 						<td><fmt:formatDate pattern="EEE dd/MM/yyyy" value="${funcionario.dataAdmissao}"/></td>
 						<td>${funcionario.situacao}</td>
 						<td>
-							<a href="#" 
+							<a href="/projetoSpringMVC01/funcionario-edicao?id=${funcionario.idFuncionario}" 
 								class="btn btn-primary btn-sm">
 								Editar
 							</a>
@@ -150,17 +150,17 @@
 	</div>
 
 	<!-- Referencia para arquivos JS -->
-	<script src="resources/js/bootstrap.min.js"></script>
+	<src="resources/js/bootstrap.min.js"></>
 	
 	<!-- Referencia para o JQuery -->
-	<script src="resources/js/jquery-3.6.0.min.js"></script>
+	<src="resources/js/jquery-3.6.0.min.js"></>
 	
 	<!-- Referencias para o JQuery validate -->
-	<script src="resources/js/jquery.validate.min.js"></script>
-	<script src="resources/js/messages_pt_BR.min.js"></script>
+	<src="resources/js/jquery.validate.min.js"></>
+	<src="resources/js/messages_pt_BR.min.js"></>
 	
 	<!-- Referencia para o JQuery datatable -->
-	<script src="resources/js/jquery.dataTables.min.js"></script>
+	<src="resources/js/jquery.dataTables.min.js"></>
 
 	<script>
 		//quando a página for carregada, faça..

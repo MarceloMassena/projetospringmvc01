@@ -59,7 +59,7 @@
 	<div class="nav-scroller bg-body shadow-sm">
 		<nav class="nav nav-underline">
 			<p class="mt-3 ml-4">
-				&nbsp;&nbsp;&nbsp;Sistema desenvolvido em Spring MVC com Spring JDBC, Bootstrap e JQuery
+				   Sistema desenvolvido em Spring MVC com Spring JDBC, Bootstrap e JQuery
 			</p>
 		</nav>
 	</div>
@@ -82,33 +82,32 @@
 	
 
 	<div class="container mt-4">
-		<h5>Cadastro de Funcionário</h5>
+		<h5>Atualização de Funcionário</h5>
 		<hr/>
 		
-		<form id="formcadastro" action="cadastrarFuncionario" method="post">
+		<form id="formedicao" action="atualizarFuncionario" method="post">
 		
 			<div class="row">
 			
 				<div class="col-md-4">
+				
+					<label>CPF: <strong>${dto.cpf}</strong></label>
+					<br/>	
+					<label>Matrícula: <strong>${dto.matricula}</strong></label>
+					<br/>
+					<br/>
+				
+					<!-- campo oculto -->
+					<form:input path="dto.idFuncionario" type="hidden"/>
 					
 					<label>Nome do Funcionário:</label>
-					<form:input path="dto.nome" name="nome" id="nome" type="text" class="form-control" placeholder="Ex: João da Silva"/>
+					<form:input path="dto.nome" name="nome" id="nome" type="text" 
+						class="form-control" placeholder="Ex: João da Silva"/>
 					<br/>
-					
-					<label>CPF:</label>
-					<form:input path="dto.cpf" name="cpf" id="cpf" type="text" class="form-control" placeholder="Ex: 123.456.789-00"/>
-					<br/>
-					
-					<label>Matrícula:</label>
-					<form:input path="dto.matricula" name="matricula" id="matricula" type="text" class="form-control" placeholder="Ex: 2021-0001"/>
-					<br/>
-
-				</div>
-				
-				<div class="col-md-4">
 					
 					<label>Data de Admissão:</label>
-					<form:input path="dto.dataadmissao" name="dataadmissao" id="dataadmissao" type="date" class="form-control"/>
+					<form:input path="dto.dataadmissao" name="dataadmissao" id="dataadmissao" 
+						type="date" class="form-control"/>
 					<br/>
 					
 					<label>Situação do Funcionário:</label>
@@ -116,17 +115,18 @@
 						<option value="">Escolha uma opção</option>
 						<form:options items="${situacoes}"/>
 					</form:select>
-					<br/>
+					<br/>	
+		
 
 				</div>
-			
+							
 			</div>
 			
 			<div class="row">
 				<div class="col-md-4">
 				
 					<div class="d-grid gap-2">
-  						<button class="btn btn-success" type="submit">Realizar Cadastro</button>
+  						<button class="btn btn-success" type="submit">Salvar Alterações</button>
 					</div>
 				
 				</div>
@@ -137,40 +137,30 @@
 	</div>
 
 	<!-- Referencia para arquivos JS -->
-	<script src="resources/js/bootstrap.min.js"></script>
+	<src="resources/js/bootstrap.min.js"></>
 	
 	<!-- Referencia para o JQuery -->
-	<script src="resources/js/jquery-3.6.0.min.js"></script>
+	<src="resources/js/jquery-3.6.0.min.js"></>
 	
 	<!-- Referencia para o JQuery Masked Input -->
-	<script src="resources/js/jquery.maskedinput.min.js"></script>	
+	<src="resources/js/jquery.maskedinput.min.js"></>	
 	
 	<!-- Referencias para o JQuery validate -->
-	<script src="resources/js/jquery.validate.min.js"></script>
-	<script src="resources/js/messages_pt_BR.min.js"></script>
+	<src="resources/js/jquery.validate.min.js"></>
+	<src="resources/js/messages_pt_BR.min.js"></>
 
 	<script>
 		//quando a página for carregada, faça..
 		$(document).ready(function(){ //page load, start..
-			
-			//aplicando máscara nos campos do formulário..
-			$("#cpf").mask("999.999.999-99");
-			$("#matricula").mask("9999-9999");
-			
+						
 			//aplicando validação ao formulário..
-			$("#formcadastro").validate({
+			$("#formedicao").validate({
 				//regras de validação..
 				rules : {
 					"nome" : {
 						required : true,
 						minlength : 6,
 						maxlength : 150
-					},
-					"cpf" : {
-						required : true
-					},
-					"matricula" : {
-						required : true
 					},
 					"dataadmissao" : {
 						required : true
@@ -186,6 +176,8 @@
 
 </body>
 </html>
+
+
 
 
 

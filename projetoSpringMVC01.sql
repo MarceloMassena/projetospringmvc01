@@ -12,8 +12,10 @@ create table funcionario(
     primary key(idfuncionario));
     
 alter table funcionario add constraint check_situacao
-check(situacao in('Admitido', 'Ferias', 'Afastado', 'Demitido'));
+check(situacao in('Admitido', 'Ferias', 'Afastado', 'Demitido', 'Aposentado'));
     
 select * from funcionario;    
 
 /* delete funcionario from funcionario where idfuncionario = 3; */
+
+commit;
